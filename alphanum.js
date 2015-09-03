@@ -8,3 +8,12 @@
  * Time: 18:28
  */
 
+var AlphaNum=(function(){
+    var PUBLIC={};
+    var config={};
+
+    PUBLIC.encode=function(input){};
+    PUBLIC.parse=function(input){};
+
+    return PUBLIC;
+})();
