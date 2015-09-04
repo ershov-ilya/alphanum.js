@@ -10,6 +10,8 @@
 
 var AlphaNum=(function(){
     var PUBLIC={};
+
+    // Private methods
     var config={};
 
     PUBLIC.config=function(options){
@@ -17,7 +19,8 @@ var AlphaNum=(function(){
             return false;
         }
         if(typeof $ != 'undefined'){
-            config= $.extend(config,options);
+            // Deep clone copy
+            config= $.extend(true, config,options);
             return true;
         }
         for(k in options){
