@@ -12,6 +12,19 @@ var AlphaNum=(function(){
     var PUBLIC={};
     var config={};
 
+    PUBLIC.config=function(options){
+        if(typeof options == 'undefined'){
+            return false;
+        }
+        if(typeof $ != 'undefined'){
+            config= $.extend(config,options);
+            return true;
+        }
+        for(k in options){
+            config[k]=options[k];
+        }
+        return false;
+    };
     PUBLIC.encode=function(input){};
     PUBLIC.parse=function(input){};
 
