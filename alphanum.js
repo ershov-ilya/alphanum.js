@@ -18,7 +18,7 @@ var AlphaNum=(function(){
     };
 
     PUBLIC.init=function($alphabet){
-        if(typeof $alphabet == 'undefined') $alphabet='0123456789abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ';
+        if(typeof $alphabet == 'undefined') return false;
         config.alphabet=$alphabet;
         config.base=$alphabet.length;
     };
