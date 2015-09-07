@@ -57,22 +57,20 @@ var AlphaNum=(function(){
         return $output;
     };
 
-    /*
-    PUBLIC.parse=function($input){
-        $alphabet=AlphaNum::$alphabet;
-        $base=AlphaNum::$base;
-        $str=rtrim($input,"\n\r");
-        $res=0;
-        $len=strlen($str);
-        $last=$len-1;
-        for($i=0; $i<$len; $i++){
-            $pos=strpos($alphabet,$str[$i]);
+    PUBLIC.parse=function($str){
+        var $alphabet=config.alphabet;
+        var $base=config.base;
+        var $res=0;
+        var $len=$str.length;
+        var $last=$len-1;
+        for(var $i=0; $i<$len; $i++){
+            $pos=$alphabet.indexOf($str[$i]);
+            if($pos<0) return false;
             $res+=$pos;
             if($i!=$last) $res *= $base;
         }
         return $res;
     };
-    */
 
     return PUBLIC;
 })();
