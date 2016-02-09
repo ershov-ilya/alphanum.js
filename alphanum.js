@@ -52,10 +52,8 @@ var AlphaNum=(function(){
         var $alphabet=config.alphabet;
         var $base=config.base;
         var $num=parseInt($input,10);
-        // Защита от переполнения, так как нативный
-        // parseInt("999999999999999934463",10);
-        // возвращает << 999999999999999900000
-        if($num>=999999999999999900000) return false;
+        // Защита от переполнения
+        if($num>Number.MAX_SAFE_INTEGER) return false;
         var $output='', $rest, $sym;
         do {
             $rest = $num % $base;
