@@ -23,6 +23,12 @@ var AlphaNum=(function(){
         config.base=$alphabet.length;
     };
 
+    PUBLIC.setAlphabet=function($alphabet){
+        if(typeof $alphabet == 'undefined') return false;
+        config.alphabet=$alphabet;
+        config.base=$alphabet.length;
+    };
+
     PUBLIC.test = function(){
         console.log(config);
     };
@@ -55,6 +61,11 @@ var AlphaNum=(function(){
         }while($num>0);
         $output=$output.split("").reverse().join("");
         return $output;
+    };
+
+    // Synonim for parse
+    PUBLIC.decode=function($str){
+        return PUBLIC.parse($str);
     };
 
     PUBLIC.parse=function($str){
