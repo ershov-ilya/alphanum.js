@@ -54,6 +54,8 @@ var AlphaNum=(function(){
         var $num=parseInt($input,10);
         // Защита от переполнения
         if($num>Number.MAX_SAFE_INTEGER) return false;
+        // Защита от всего кроме чисел
+        if(isNaN($num))  return false;
         var $output='', $rest, $sym;
         do {
             $rest = $num % $base;
