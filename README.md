@@ -12,30 +12,32 @@ and parse back:
 ###Example
 ```
 var num=900800700;
-print '$num: '.$num.PHP_EOL;
-print $alphanum=AlphaNum::make($num).PHP_EOL;
-print AlphaNum::parse($alphanum).PHP_EOL;
+console.log('num: '+num);
+var alphanum=AlphaNum.encode(num);
+console.log('alphanum: '+alphanum);
+console.log(AlphaNum.parse(alphanum));
 ```
 outputs:
 ```
-$num: 900800700
-$alphanum: 19vnq0
+num: 900800700
+alphanum: 19vnq0
 900800700
 ```
 
 ####Overwrite default alphabet
 ```
-new AlphaNum('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'); // overwrite default alphabet
-$num=900800700;
-print '$num: '.$num.PHP_EOL;
-print $alphanum=AlphaNum::make($num).PHP_EOL;
-print AlphaNum::parse($alphanum).PHP_EOL;
+AlphaNum.setAlphabet('0123456789abcdefghijklmnopqrstuvwxyz'); // overwrite default alphabet
+var num=900800700;
+console.log('num: '+num);
+var alphanum=AlphaNum.encode(num);
+console.log('alphanum: '+alphanum);
+console.log(AlphaNum.parse(alphanum));
 ```
 
 outputs:
 ```
-$num: 900800700
-$alphanum: YXFpy
+num: 900800700
+alphanum: ewba9o
 900800700
 ```
 
