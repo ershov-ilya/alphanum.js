@@ -3,11 +3,11 @@ Convert **int** to **alphanumeric** hash of any base, you wants, and back
 
 Simple inlcude module, and use as:
 
-**AlphaNum.encode($num)**
+**AlphaNum.encode(num)**
 
 and parse back:
 
-**AlphaNum.parse($alphanum)**
+**AlphaNum.parse(alphanum)**
 
 ###Example
 ```
